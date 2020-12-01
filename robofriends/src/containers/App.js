@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
 // import { robots } from './robots';
+import Scroll from '../components/Scroll';
 import './App.css';
 
 // constructing the App component and declaring states in contructor
@@ -40,7 +41,10 @@ class App extends Component {
           <h1 className="f1">Robofriendz</h1>
           <hr></hr>
           <SearchBox searchChange={this.onSearchChange} />
-          <CardList robots={filteredRobots} />
+          <Scroll>
+            <CardList robots={filteredRobots} />
+          </Scroll>
+          <h3 className="f4">Made in Dunkerque by Dhagnere</h3>
         </div>
       );
     }
